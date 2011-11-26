@@ -55,7 +55,11 @@ $document->addScriptDeclaration( $js );
 $bigwidth = $slideshow->width + 139;
 $examplewidth = $slideshow->width ;
 $containwidth = $slideshow->width + 20;		
-$leftwidth = $slideshow->width + 10;	
+$leftwidth = $slideshow->width + 10;
+$captionwidth = $slideshow->width - 40 ;	
+
+$nextheight = $slideshow->height /2 - 21.5;
+
 		
 $css ="
 	#container {
@@ -67,8 +71,8 @@ $css ="
 }
 
 #example {
-	width:{$examplewidth}px;
-	height:300px;
+	width:{$slideshow->width}px;
+	height:{$slideshow->height}px;
 	position:relative;
 	background-color: #FFF;
 	padding:10px;
@@ -130,7 +134,7 @@ $css ="
 
 #slides .next,#slides .prev {
 	position:absolute;
-	top:130px;
+	top:{$nextheight}px;
 	left:-34px;
 	width:24px;
 	height:43px;
@@ -183,9 +187,9 @@ $css ="
 	left:0;
 	height:50px;
 	padding:5px 20px 0 20px;
-	background:#000;
-	background:rgba(0,0,0,.5);
-	width:360px;
+	background:#067AB7;
+	background:rgba(6,122,183,.5);
+	width:{$captionwidth}px;
 	font-size:1em;
 	line-height:1;
 	color:#fff;
@@ -233,10 +237,11 @@ a:hover,a:active {
 					$div = '<div class="slide">';
 					$div .=	'<a href="'.$image -> link.'" title="'. $image -> title.'" target="_blank"><img src="'.$image -> enclosure['url'].'" width="'.$slideshow->width.'" height="'.$slideshow->height.'" alt="'.$image->description.'"></a>';
 							
-				
+				    if(strlen($image->description)) {
 					$div .= '<div class="caption" style="bottom:0">';
 					$div .= '' . trim(substr(stripslashes($image->description), 0, 145)) . '';
 					$div .= '</div>'; //caption
+					}
 					$div .= '</div>'; //slide
 					$images [] = $div;
 				}

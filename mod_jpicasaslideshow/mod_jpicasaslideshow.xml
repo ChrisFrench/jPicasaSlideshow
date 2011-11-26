@@ -20,15 +20,18 @@
         <filename>js/slides.min.jquery.js</filename>
         <filename>css/slides.css</filename>
         <filename>img/arrow-next.png</filename>
+        <filename>img/arrow-prev.png</filename>
+        <filename>img/background.png</filename>
+        <filename>img/loading.gifg</filename>
+        <filename>img/new-ribbon.png</filename>
+        <filename>img/pagination.png</filename>
     </files>
     <config>
         <fields name="params">
             <fieldset name="basic">
                 <field name="mod_jpicasaslideshow_url" type="text" label="Slideshow RSS URL" description="Make Slideshow RSS"/>
-                
                 <field name="mod_jpicasaslideshow_width" type="text" label="Width of the slideshow" description="Width of the slideshow" />
                 <field name="mod_jpicasaslideshow_height" type="text" label="Height of the slideshow" description="Height of the slideshow" />
-                   
                 <field name="mod_jpicasaslideshow_jquery" type="radio" label="Load jQuery" description="Load jQuery, if you already have it loaded set to No" default="1">
                     <option value="0">No</option>
                     <option value="1">Yes</option>
@@ -38,7 +41,6 @@
                     <option value="CURL">CURL</option>
                     <option value="simplexml">simplexml</option>
                 </field>
-                
             </fieldset>
         </fields>
     </config>

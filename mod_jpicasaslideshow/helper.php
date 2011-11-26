@@ -28,11 +28,9 @@ class modjPicasaSlideshowHelper {
 	{
 		return $this->url;
 	}
-	
-	
+
 	// added this because many  servers require we load remote files via CURL
 	function load_file( ) {
-		
 		switch ($this->conn) {
 			case 'simplexml':
 			$xml = simplexml_load_file($this->url);
@@ -47,19 +45,13 @@ class modjPicasaSlideshowHelper {
 				$xml = simplexml_load_file($this->url);
 				break;	
 		}	
-		
 		return $xml;
 	}
 		
-   
-  
    function createGallery(){
 	$gallery = $this->load_file();
 	return $gallery;
 	
    }
-   
-
-	
-	
+ 
 }

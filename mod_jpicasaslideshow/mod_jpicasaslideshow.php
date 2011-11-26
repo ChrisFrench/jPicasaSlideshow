@@ -8,6 +8,6 @@ require_once dirname(__FILE__).DS.'helper.php';
 
 $slideshow = New modjPicasaSlideshowHelper($params);
 
-require JModuleHelper::getLayoutPath('mod_jpicasaslideshow', $params->get('layout', 'fadeslideshow'));
+require JModuleHelper::getLayoutPath('mod_jpicasaslideshow', $params->get('layout', 'jsslides'));
 
 
