@@ -1,4 +1,3 @@
-
 <?php
 
 class modjPicasaSlideshowHelper {
@@ -36,9 +35,7 @@ class modjPicasaSlideshowHelper {
 		
 		switch ($this->conn) {
 			case 'simplexml':
-				
 			$xml = simplexml_load_file($this->url);
-			
 				break;
 			case 'CURL':
 			$ch = curl_init($this->url);
@@ -57,9 +54,7 @@ class modjPicasaSlideshowHelper {
    
   
    function createGallery(){
-   	
 	$gallery = $this->load_file();
-	
 	return $gallery;
 	
    }

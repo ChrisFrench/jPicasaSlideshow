@@ -13,8 +13,13 @@
         <filename>mod_jpicasaslideshow.xml</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
-        <filename>tmpl/default.php</filename>
+        <filename>tmpl/fadeslideshow.php</filename>
+        <filename>tmpl/jsslides.php</filename>
         <filename>tmpl/index.html</filename>
+        <filename>js/fadeSlideShow.js</filename>
+        <filename>js/slides.min.jquery.js</filename>
+        <filename>css/slides.css</filename>
+        <filename>img/arrow-next.png</filename>
     </files>
     <config>
         <fields name="params">

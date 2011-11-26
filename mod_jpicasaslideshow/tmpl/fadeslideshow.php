@@ -2,7 +2,11 @@
 // This is the default output file
 defined('_JEXEC') or die;
 
-//JHTML::_('script', 'jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/');
+
+if($params->get('mod_jpicasaslideshow_jquery')) {
+ JHTML::_('script', 'jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/');
+}
+
 JHTML::_('script', 'fadeSlideShow.js', 'modules/mod_jpicasaslideshow/js/');
 $document = &JFactory::getDocument();
 $noConflict = " jQuery.noConflict(); ";
@@ -41,6 +45,7 @@ $js = " jQuery(document).ready(function() {
   
 }
  
+
 .slideshow .caption h3,
 .slideshow .caption,
 .slideshow .caption a {
@@ -49,7 +54,26 @@ $js = " jQuery(document).ready(function() {
 }
 
 .slideshow .caption {
-    padding: 5px 10px;
+    padding: 0px 0px;
+    background-color: #067AB7;
+    width: 400px;
+    height: 35px;
+   
+}
+.slideshow .caption {
+    padding: 2px 0px;
+    background-color: #067AB7;
+    width: 400px;
+    height: 50px;
+    text-align: left;
+   
+}
+.slideshow .caption .caption_text{
+	margin: 5px;
+    background-color: #067AB7;
+    width: 390px;
+    height: 45px;
+   
 }
 
 .slideshow #Prev, .slideshow #Next, .slideshow #Pause, .slideshow #Play { margin-left: 4px; padding: 4px;}
@@ -71,8 +95,8 @@ $document->addStyleDeclaration($css);
 				foreach ($slideshow->gallery->channel->item as $image) {
 					$li = '<li class="image">';
 					$li .= '<img src="' . $image -> enclosure['url'] . '"' .'height="'. $slideshow->height .'"'.'  ref="" title="" />';
-					$li .= '<div class="schoolcaption">';
-					$li .= '<span class="caption_text">' . trim(substr(stripslashes($image -> description), 0, 145)) . '</span>';
+					$li .= '<div class="caption">';
+					$li .= '<span class="caption_text">' . trim(substr(stripslashes($image->description), 0, 145)) . '</span>';
 					$li .= '</div></li>';
 					$images [] = $li;
 				}
